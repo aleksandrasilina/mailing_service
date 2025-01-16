@@ -8,9 +8,7 @@ class NotificationSerializer(serializers.ModelSerializer):
     recipients = serializers.ListField(
         child=serializers.CharField(max_length=150),
         write_only=True,
-        help_text=(
-            "Получатели уведомления (string(150) | list[string(150)])."
-        ),
+        help_text=("Получатели уведомления (string(150) | list[string(150)])."),
     )
 
     class Meta:
