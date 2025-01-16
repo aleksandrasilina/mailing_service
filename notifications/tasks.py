@@ -1,9 +1,5 @@
-import requests
 from celery import shared_task
-from django.core.mail import send_mail
 
-from config import settings
-from notifications.models import NotificationLog
 from notifications.services import send_email_message, send_telegram_message
 
 

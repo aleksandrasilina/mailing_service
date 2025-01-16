@@ -1,19 +1,14 @@
-from datetime import timedelta
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
 
 from django.urls import reverse
-from django.utils.timezone import now
 from rest_framework import status
-from rest_framework.exceptions import ValidationError
 from rest_framework.test import APITestCase
 
 from notifications.models import Notification, NotificationLog
 from notifications.serializers import NotificationSerializer
 from notifications.services import send_email_message, send_telegram_message
 from notifications.tasks import send_notifications
-from notifications.validators import RecipientsValidator
-from users.models import User
 
 
 class NotificationTestCase(APITestCase):
