@@ -20,6 +20,9 @@ class NotificationSerializer(serializers.ModelSerializer):
     def to_internal_value(self, data):
         """Обрабатывает входные данные, валидирует получателей и сохраняет их в контексте."""
 
+        # Создаем изменяемую копию данных
+        data = data.copy()
+
         recipients = data.get("recipients")
 
         # Если передан один получатель как строка, преобразуем его в список
